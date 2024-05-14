@@ -119,56 +119,70 @@ int Deletar()
 
 
 int main()
-{
+    {
 	int opcao=0; //Definindo variaveis
 	int repeticao=1; //Inicio do Codigo de Repetição
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(repeticao=1;repeticao=1;)
+	printf("### Cartorio da EBAC ###\n\n");
+	printf("Login de administrador!\n\nDigite a sua senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
 	
-	    system("cls"); //codigo para limpar a tela
+		system ("cls");
+  		for(repeticao=1;repeticao=1;)
+		{
 	
-	    setlocale(LC_ALL, "Portuguese"); //Definindo o indioma
+	 	   system("cls"); //codigo para limpar a tela
+		
+		    setlocale(LC_ALL, "Portuguese"); //Definindo o indioma
 	
-	    printf("### Cartório da EBAC ###\n\n"); //Titulo do software e Inicio do menu
-	    printf("Escolha a opção desejada do menu\n\n"); //Opções de menu
-	    printf("\t1 - Registrar nomes\n"); //opção 1
-	    printf("\t2 - Consultar nomes\n"); //opção 2
-	    printf("\t3 - Deletar nomes\n"); //opção 3 e Fim do menu
-	    printf("\t4 - Sair do sistema\n\n"); //opção de saida
-	    printf("Opção: ");
+		    printf("### Cartório da EBAC ###\n\n"); //Titulo do software e Inicio do menu
+		    printf("Escolha a opção desejada do menu\n\n"); //Opções de menu
+		    printf("\t1 - Registrar nomes\n"); //opção 1
+	  	    printf("\t2 - Consultar nomes\n"); //opção 2
+	  	    printf("\t3 - Deletar nomes\n"); //opção 3 e Fim do menu
+		    printf("\t4 - Sair do sistema\n\n"); //opção de saida
+		    printf("Opção: ");
 	
-	    scanf("%d" , &opcao); //Armazenando a escolha do usuario
+		    scanf("%d" , &opcao); //Armazenando a escolha do usuario
 	
-	    system("cls"); //codigo para limpar a tela
+		    system("cls"); //codigo para limpar a tela
 	    
 	    
-	    switch(opcao) //mudança da forma de opções e inicio da seleção de menu
-	    {
-	    	case 1:
-	    	Registrar(); //chamada de funçoes
-		    break;
+			switch(opcao) //mudança da forma de opções e inicio da seleção de menu
+		    {
+		    	case 1:
+		    	Registrar(); //chamada de funçoes
+			    break;
 		    
-		    case 2:
-		    Consultar();
-		    break;
+			    case 2:
+			    Consultar();
+			    break;
 		    
-		    case 3:
-		    Deletar();
-	     	break;
+			    case 3:
+			    Deletar();
+		     	break;
 	     	
-	     	case 4:
-	    	printf("Obrigado por utilizar o sistema!"); //opção de saida
-	    	return 0; //return 0 faz o programa fechar
-	    	break;
-	     	
-	     	default:
-	     	printf("Opção invalida!\n"); //Mensagem se o usuario por informações invalidas
-    		system("pause");
-    		break;
+		     	case 4:
+		    	printf("Obrigado por utilizar o sistema!"); //opção de saida
+	    		return 0; //return 0 faz o programa fechar
+	    		break;
 	     		
-		    	
-	    } 
+	     		default:
+	     		printf("Opção invalida!\n"); //Mensagem se o usuario por informações invalidas
+    			system("pause");
+    			break;
+	     	}
 	
-    } //Fim do codigo de Repetição
+   		} //Fim do codigo de Repetição
+    }
+    
+    else
+        printf("Senha incorreta!");
 }
